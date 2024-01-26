@@ -10,7 +10,7 @@ import SafetyPlanForm from './components/SafetyPlanForm';
 // import Financial from './components/FinancialAbusePage';
 // import Physical from './components/PhysicalAbusePage';
 // import Emotional from './components/EmotionalAbusePage';
-// import Sexual from './components/SexualAbusePage';
+import Sexual from './components/SexualAbusePage';
 // import Digital from './components/DigitalAbusePage';
 // import Stalking from './components/StalkingPage';
 import AboutUs from './components/AboutUs';
@@ -57,12 +57,12 @@ function App() {
           <Route path="/testimonials" element={<Testimonials />} />
           <Route path="/financial_abuse" element={<Financial/>}/>
           <Route path="/emotional_abuse"element={<Emotional/>}/>
-          <Route path="/physical_abuse" element={<Physical/>}/>
-          <Route path="/sexual_abuse" element={<Sexual/>}/>
-          <Route path="/digital_abuse" element={<Digital/>}/>
+          <Route path="/physical_abuse" element={<Physical/>}/>*/}
+           <Route path="/sexual_abuse" element={<Sexual/>}/>
+          {/*<Route path="/digital_abuse" element={<Digital/>}/>
           <Route path="/stalking" element={<Stalking/>}/>
           <Route path="/consultations" element={<Consultation newConsultation={newConsultation} />} />
-          <Route path="/agencies" element={<AgencyMain />} />  */}
+          <Route path="/agencies" element={<AgencyMain />} />   */}
           <Route path='/about_us' element={<AboutUs />} /> 
         </Routes>
 
