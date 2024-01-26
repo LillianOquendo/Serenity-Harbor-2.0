@@ -7,7 +7,7 @@ import ConsultForm from './components/ConsultForm';
 // import ContactPage from './components/ContactPage';
 // import Testimonials from './components/Testimonials';
 import SafetyPlanForm from './components/SafetyPlanForm';
-// import Financial from './components/FinancialAbusePage';
+import Financial from './components/FinancialAbusePage';
 import Physical from './components/PhysicalAbusePage';
 import Emotional from './components/EmotionalAbusePage';
 import Sexual from './components/SexualAbusePage';
@@ -54,8 +54,8 @@ function App() {
            <Route path="/" element={<Homepage />} />
           {/* <Route path="/safety_plan" element={<SafetyPlan />} />
           <Route path="/contact" element={<ContactPage />} />
-          <Route path="/testimonials" element={<Testimonials />} />
-          <Route path="/financial_abuse" element={<Financial/>}/>*/}
+          <Route path="/testimonials" element={<Testimonials />} />*/}
+          <Route path="/financial_abuse" element={<Financial/>}/>
           <Route path="/emotional_abuse"element={<Emotional/>}/>
           <Route path="/physical_abuse" element={<Physical/>}/>
            <Route path="/sexual_abuse" element={<Sexual/>}/>
