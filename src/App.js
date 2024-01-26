@@ -4,8 +4,8 @@ import NavbarWithMegaMenu from './components/NavBar';
 import Homepage from './components/Homepage';
 import ConsultForm from './components/ConsultForm';
 // import SafetyPlan from './components/SafetyPlanForm';
-// import ContactPage from './components/ContactPage';
-// import Testimonials from './components/Testimonials';
+import ContactPage from './components/ContactPage';
+//import Testimonials from './components/Testimonials';
 import SafetyPlanForm from './components/SafetyPlanForm';
 import Financial from './components/FinancialAbusePage';
 import Physical from './components/PhysicalAbusePage';
@@ -52,9 +52,9 @@ function App() {
         <NavbarWithMegaMenu />
         <Routes>
            <Route path="/" element={<Homepage />} />
-          {/* <Route path="/safety_plan" element={<SafetyPlan />} />
+          {/* <Route path="/safety_plan" element={<SafetyPlan />} />*/}
           <Route path="/contact" element={<ContactPage />} />
-          <Route path="/testimonials" element={<Testimonials />} />*/}
+          {/* <Route path="/testimonials" element={<Testimonials />} /> */}
           <Route path="/financial_abuse" element={<Financial/>}/>
           <Route path="/emotional_abuse"element={<Emotional/>}/>
           <Route path="/physical_abuse" element={<Physical/>}/>
