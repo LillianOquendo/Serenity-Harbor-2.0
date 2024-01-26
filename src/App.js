@@ -3,7 +3,7 @@ import { BrowserRouter, Route, Routes, useLocation } from 'react-router-dom';
 import NavbarWithMegaMenu from './components/NavBar';
 import Homepage from './components/Homepage';
 import ConsultForm from './components/ConsultForm';
-// import SafetyPlan from './components/SafetyPlanForm';
+import SafetyPlan from './components/SafetyPlanForm';
 import ContactPage from './components/ContactPage';
 //import Testimonials from './components/Testimonials';
 import SafetyPlanForm from './components/SafetyPlanForm';
@@ -15,7 +15,7 @@ import Digital from './components/DigitalAbusePage';
 import Stalking from './components/StalkingPage';
 import AboutUs from './components/AboutUs';
 import Consultation from './components/Consultations';
-// import AgencyMain from './components/AgencyMain';
+import AgencyMain from './components/AgencyMain';
 // import NewsletterSignup from './components/Newsletter';
 import './App.css';
 import 'tailwindcss/tailwind.css';
@@ -52,7 +52,7 @@ function App() {
         <NavbarWithMegaMenu />
         <Routes>
            <Route path="/" element={<Homepage />} />
-          {/* <Route path="/safety_plan" element={<SafetyPlan />} />*/}
+          <Route path="/safety_plan" element={<SafetyPlan />} />
           <Route path="/contact" element={<ContactPage />} />
           {/* <Route path="/testimonials" element={<Testimonials />} /> */}
           <Route path="/financial_abuse" element={<Financial/>}/>
@@ -61,8 +61,8 @@ function App() {
            <Route path="/sexual_abuse" element={<Sexual/>}/>
           <Route path="/digital_abuse" element={<Digital/>}/>
           <Route path="/stalking" element={<Stalking/>}/>
-          {/*<Route path="/consultations" element={<Consultation newConsultation={newConsultation} />} />
-          <Route path="/agencies" element={<AgencyMain />} />   */}
+          {/*<Route path="/consultations" element={<Consultation newConsultation={newConsultation} />} />*/}
+          <Route path="/agencies" element={<AgencyMain />} />   
           <Route path='/about_us' element={<AboutUs />} /> 
         </Routes>
 
