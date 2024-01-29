@@ -1,5 +1,5 @@
 import React from "react";
-//import NewsletterSignup from "./Newsletter";
+import NewsletterSignup from "./Newsletter";
 
 function Emotional(){
     return (
@@ -128,7 +128,7 @@ function Emotional(){
             
         <div class="white-rectangle"></div>
     
-        {/* <NewsletterSignup />   */}
+        <NewsletterSignup />  
         </div>
         </div>
     );

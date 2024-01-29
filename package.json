@@ -2,6 +2,7 @@
   "name": "serenity",
   "version": "0.1.0",
   "private": true,
+  "proxy": "http://127.0.0.1:5555",
   "dependencies": {
     "@heroicons/react": "^2.1.1",
     "@material-tailwind/react": "^2.1.8",

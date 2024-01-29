@@ -16,7 +16,7 @@ import Stalking from './components/StalkingPage';
 import AboutUs from './components/AboutUs';
 import Consultation from './components/Consultations';
 import AgencyMain from './components/AgencyMain';
-// import NewsletterSignup from './components/Newsletter';
+import NewsletterSignup from './components/Newsletter';
 import './App.css';
 import 'tailwindcss/tailwind.css';
 import { AgencyProvider } from './components/AgencyContext';
@@ -66,7 +66,6 @@ function App() {
           <Route path='/about_us' element={<AboutUs />} /> 
         </Routes>
 
-        Force system to populate information on their own pages 
         <Routes>
           <Route
             path='/contact'
@@ -76,6 +75,7 @@ function App() {
             path="/safety_plan"
             render={() => <SafetyPlanForm onSubmit={handleSubmit} />}
           />
+
         </Routes> 
 
       </div>

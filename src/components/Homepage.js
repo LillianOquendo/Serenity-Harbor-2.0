@@ -1,5 +1,5 @@
 import React from "react";
-//import NewsletterSignup from "./Newsletter";
+import NewsletterSignup from "./Newsletter";
 
 import "../App.css";
 //import { Button } from "@material-tailwind/react";
@@ -64,7 +64,7 @@ function Homepage(){
           
     {/* <div class="white-rectangle"></div> */}
   
-      {/* <NewsletterSignup />   */}
+      <NewsletterSignup />  
         
     </div>
     )

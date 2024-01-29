@@ -1,5 +1,5 @@
 import React from "react";
-//import NewsletterSignup from "./Newsletter";
+import NewsletterSignup from "./Newsletter";
 function Sexual() {
   return (
     <div>
@@ -144,7 +144,7 @@ function Sexual() {
 
         <div class="white-rectangle"></div>
 
-        {/* <NewsletterSignup /> */}
+        <NewsletterSignup />
       </div>
     </div>
   );

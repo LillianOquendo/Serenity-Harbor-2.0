@@ -1,5 +1,5 @@
 import React from "react";
-//import NewsletterSignup from "./Newsletter";
+import NewsletterSignup from "./Newsletter";
 function Stalking(){
     return(
         
@@ -127,7 +127,7 @@ function Stalking(){
             
         <div class="white-rectangle"></div>
     
-        {/* <NewsletterSignup />   */}
+        <NewsletterSignup />  
         </div>
         </div>
     );
