@@ -2,18 +2,17 @@ import React from "react";
 import NewsletterSignup from "./Newsletter";
 
 import "../App.css";
-//import { Button } from "@material-tailwind/react";
+import { Button } from "@material-tailwind/react";
 
 function Homepage(){
 
     return(
-        <div >
+        <div class ="mainBackground">
 
 <div class="pt-14">
       <div class="container px-3 mx-auto flex flex-wrap flex-col md:flex-row justify-between items-center">
         {/* <!--Left Col--> */}
-        <div class="flex flex-col w-full md:w-2/5 justify-center items-start text-center md:text-left ">
-          {/* <p class="uppercase tracking-loose w-full">Welcome to Serenity Harbor</p> */}
+        <div class="flex flex-col w-full md:w-2/5 justify-center items-start text-center md:text-left ">  
           <h1 class="my-4 text-5xl font-bold leading-tight text-white drop-shadow-[0px_5px_0px_rgba(0,0,0,.5)] ">
             Welcome to Serenity Harbor
           </h1>
@@ -62,7 +61,7 @@ function Homepage(){
       
     </div>
           
-    {/* <div class="white-rectangle"></div> */}
+    <div class="white-rectangle"></div>
   
       <NewsletterSignup />  
         

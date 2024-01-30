@@ -1,5 +1,6 @@
 import React from "react";
 import NewsletterSignup from "./Newsletter";
+import '../App.css'
 function Sexual() {
   return (
     <div>

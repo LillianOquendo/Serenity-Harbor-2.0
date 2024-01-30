@@ -1,5 +1,6 @@
 import React from "react";
 import NewsletterSignup from "./Newsletter";
+import '../App.css'
 function Stalking(){
     return(
         
@@ -18,15 +19,11 @@ function Stalking(){
                     </p>
                     <p className="text-center mt-2 text-lg text-slate-500">
                     Stalking occurs when someone watches, follows, or harasses you repeatedly, making you feel afraid or unsafe. A stalker
-                    can be someone you know, a past partner, or a stranger.
-                    <br></br>
-                    When reviewing this list please keep in mind that the definition of stalking varies from state to state.
+                    can be someone you know, a past partner, or a stranger.</p>
+                    
+                    <p className="text-center mt-2 text-sm text-slate-500">When reviewing this list please keep in mind that the definition of stalking varies from state to state.
                     </p>
-                    <br></br>
-                    <h2 className="text-2xl font-medium text-slate-700 mt-3">
-                    5 Signs of Stalking
-                    </h2>
-                    <br></br>
+
                 </div>
                 <div className="title-grid text-center"></div>
                 </div>
@@ -92,7 +89,7 @@ function Stalking(){
             <img
             className="rounded-3xl"
             
-            src="/assets/images/stalker.jpg"
+            src="/images/stalker.jpg"
             alt="by PublicDomainPictures on Pixabay"
             />
         </div>
@@ -125,7 +122,7 @@ function Stalking(){
         
         </div>
             
-        <div class="white-rectangle"></div>
+        {/* <div class="white-rectangle"></div> */}
     
         <NewsletterSignup />  
         </div>

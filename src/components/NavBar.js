@@ -26,7 +26,7 @@ const colors = {
   blue: "bg-blue-50 text-blue-500",
   orange: "bg-orange-50 text-orange-500",
   green: "bg-green-50 text-green-500",
-  "blue-gray": "bg-blue-gray-50 text-blue-gray-500",
+  black: "bg-blue-gray-50 text-blue-gray-500",
   purple: "bg-purple-50 text-purple-500",
   teal: "bg-teal-50 text-teal-500",
   cyan: "bg-cyan-50 text-cyan-500",
@@ -56,7 +56,7 @@ const navListMenuItems = [
     description: "Learn what Digital Abuse is.",
   },
   {
-    color: "blue-gray",
+    color: "black",
     icon: ChevronDoubleRightIcon,
     title: "Sexual Abuse",
     description: "Learn what Sexual Abuse is.",
@@ -95,7 +95,7 @@ function NavListMenu() {
           <div>
             <Typography
               variant="h6"
-              color="blue-gray"
+              color="black"
               className="flex items-center text-sm"
             >
               {title}
@@ -161,7 +161,7 @@ function NavList() {
         as="a"
         href="safety_plan"
         variant="small"
-        color="blue-gray"
+        color="black"
         className="font-normal"
       >
         <ListItem className="flex items-center gap-2 py-2 pr-4">
@@ -174,7 +174,7 @@ function NavList() {
         as="a"
         href="/agencies"
         variant="small"
-        color="blue-gray"
+        color="black"
         className="font-normal"
       >
         <ListItem className="flex items-center gap-2 py-2 pr-4">
@@ -186,7 +186,7 @@ function NavList() {
         as="a"
         href="/about_us"
         variant="small"
-        color="blue-gray"
+        color="black"
         className="font-normal"
       >
         <ListItem className="flex items-center gap-2 py-2 pr-4">
@@ -198,7 +198,7 @@ function NavList() {
         as="a"
         href="/contact"
         variant="small"
-        color="blue-gray"
+        color="black"
         className="font-normal"
       >
         <ListItem className="flex items-center gap-2 py-2 pr-4">
@@ -222,7 +222,7 @@ export default function NavbarWithMegaMenu() {
 
   return (
     <Navbar className="mx-auto max-w-screen-xl px-4 py-2">
-      <div className="flex items-center justify-between text-blue-gray-900">
+      <div className="flex items-center justify-between text-black">
         <Typography
           as="a"
           href="/"
