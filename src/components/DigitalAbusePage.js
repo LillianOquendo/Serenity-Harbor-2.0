@@ -19,11 +19,9 @@ function Digital(){
                     <p className="text-center mt-2 text-lg text-slate-500">
                     This behavior is often a form of verbal or emotional abuse, conducted online.
                     </p>
-                    <br></br>
-                    <h2 className="text-2xl font-medium text-slate-700 mt-3">
-                    Signs of Digital Abuse
-                    </h2>
-                    <br></br>
+                    <p className="text-center mt-2 text-sm text-slate-500">When reviewing this list please keep in mind that the definition of stalking varies from state to state.
+                    </p>
+
                 </div>
                 <div className="title-grid text-center"></div>
                 </div>
@@ -35,7 +33,7 @@ function Digital(){
                     Negative Messaging
                     </p>
                     <p className="mt-2 text-sm text-slate-500">
-                    Sending you negative, insulting, or threatening messages or emails: This type of communication is emotionally abusive and can have a severe impact on the victim's mental health.
+                    Sending you negative, insulting, or threatening messages or emails.
                     </p>
                     </div>
 
@@ -45,7 +43,7 @@ function Digital(){
                     Humiliating You Online
                     </p>
                     <p className="mt-2 text-sm text-slate-500">
-                    Insulting or humiliating you in their posts online, including posting unflattering photos or videos: Public humiliation on social media can be emotionally devastating and damaging to a person's reputation.
+                    Insulting or humiliating you in their posts online, including posting unflattering photos or videos.
                     </p>
                 </div>
 
@@ -55,7 +53,7 @@ function Digital(){
                     Pressuring You
                     </p>
                     <p className="mt-2 text-sm text-slate-500">
-                    Sending, requesting, or pressuring you to send unwanted explicit photos or videos, sexts, or otherwise compromising messages: This is a form of sexual coercion and invasion of privacy, which can be emotionally distressing.
+                    Sending, requesting, or pressuring you to send unwanted explicit photos or videos, sexts, or otherwise compromising messages.
                     </p>
                     </div>
 
@@ -65,17 +63,17 @@ function Digital(){
                     Constant Messaging
                     </p>
                     <p className="mt-2 text-sm text-slate-500">
-                    Constantly texting you or making you feel like you can't be separated from your phone for fear that you'll anger them: This is a form of control and can lead to extreme anxiety and stress.
+                    Constantly texting you or making you feel like you can't be separated from your phone for fear that you'll anger them.
                     </p>
                     </div>
 
                     <div className="p-5 flex flex-col items-center text-center group cursor-default">
                     <span className="p-5 rounded-full bg-red-500 text-white shadow-lg shadow-gray-500"></span>
                     <p className="text-xl font-medium text-slate-700 mt-3">
-                    Using Technology to Spy on You
+                    Digital Spying
                     </p>
                     <p className="mt-2 text-sm text-slate-500">
-                    Using any kind of technology (such as spyware or GPS in a car or phone) to monitor your activities: This is a significant violation of privacy and can make the victim feel constantly watched and unsafe.
+                    Using any kind of technology (such as spyware or GPS in a car or phone) to monitor your activities.
                     </p>
                     </div>
                 </div>
@@ -87,7 +85,7 @@ function Digital(){
         <div className="p-20 w-1/2">
             <img
             className="rounded-3xl"
-            src="/assets/images/computer.jpg"
+            src="/images/computer.jpg"
             alt="by Skitterphoto on Pixabay"
             />
         </div>

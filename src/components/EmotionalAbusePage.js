@@ -21,11 +21,9 @@ function Emotional(){
                     excessive texting, humiliation, intimidation, isolation, or stalking. Relationships can still be unhealthy or 
                     abusive even without physical abuse. 
                     </p>
-                    <br></br>
-                    <h2 className="text-2xl font-medium text-slate-700 mt-3">
-                    Signs of Emotional Abuse
-                    </h2>
-                    <br></br>
+                    <p className="text-center mt-2 text-sm text-slate-500">When reviewing this list please keep in mind that the definition of stalking varies from state to state.
+                    </p>
+
                 </div>
                 <div className="title-grid text-center"></div>
                 </div>
@@ -37,8 +35,7 @@ function Emotional(){
                         Constantly Insulting You
                     </p>
                     <p className="mt-2 text-sm text-slate-500">
-                    Calling you names, insulting you, or constantly criticizing you: Verbal abuse, including name-calling and criticism,
-                    can have a profound impact on a person's self-esteem and mental health.
+                    Calling you names, insulting you, or constantly criticizing you.
                     </p>
                     </div>
 
@@ -48,8 +45,7 @@ function Emotional(){
                     Isolation
                     </p>
                     <p className="mt-2 text-sm text-slate-500">
-                    Isolating you from family, friends, or other people in your life because it makes someone easier to control: Isolation
-                    is a common tactic used by abusers to control their victims and limit their support networks.
+                    Isolating you from family, friends, or other people in your life because it makes someone easier to control.
                     </p>
                 </div>
 
@@ -59,8 +55,7 @@ function Emotional(){
                     Excessive Monitoring
                     </p>
                     <p className="mt-2 text-sm text-slate-500">
-                    Monitoring your activities with or without your knowledge: Excessive monitoring and surveillance can be a form of control
-                    and invasion of privacy, leading to emotional distress.
+                    Monitoring your activities with or without your knowledge.
                     </p>
                     </div>
 
@@ -81,7 +76,7 @@ function Emotional(){
                     </p>
                     <p className="mt-2 text-sm text-slate-500">
                     Blaming you for their abusive behaviors: This involves the abuser shifting responsibility for their actions onto the victim,
-                    making the victim feel guilty or responsible for the abuse they endure. It is a form of emotional manipulation and control.
+                    making the victim feel guilty or responsible for the abuse they endure.
                     </p>
                     </div>
                 </div>
@@ -93,7 +88,7 @@ function Emotional(){
         <div className="p-20 w-1/2">
             <img
             className="rounded-3xl"
-            src="/assets/images/smiley.jpg"
+            src="/images/smiley.jpg"
             alt="by AbsolutVision on Pixabay"
             />
         </div>

@@ -32,7 +32,7 @@ function Stalking(){
                     <div className="p-5 flex flex-col items-center text-center group md:lg:xl:border-r cursor-default">
                     <span className="p-5 rounded-full bg-red-500 text-white shadow-lg shadow-gray-500"></span>
                     <p className="text-xl font-medium text-slate-700 mt-3">
-                    Unwanted Communication or Items
+                    Unwanted Communication
                     </p>
                     <p className="mt-2 text-sm text-slate-500">
                     Sending you unwanted texts, messages, letters, emails, voicemails, or leaving you unwanted items, gifts, or flowers: These behaviors involve persistent and unwanted contact, which can be distressing.

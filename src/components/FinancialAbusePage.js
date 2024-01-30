@@ -21,11 +21,9 @@ return (
                     financial resources or economic well-being to gain dominance
                     and limit their independence.
                     </p>
-                    <br></br>
-                    <h2 className="text-2xl font-medium text-slate-700 mt-3">
-                    Signs of Financial Abuse
-                    </h2>
-                    <br></br>
+                    <p className="text-center mt-2 text-sm text-slate-500">When reviewing this list please keep in mind that the definition of stalking varies from state to state.
+                    </p>
+
                 </div>
                 <div className="title-grid text-center"></div>
                 </div>
@@ -38,9 +36,7 @@ return (
                     </p>
                     <p className="mt-2 text-sm text-slate-500">
                         Providing an allowance and closely monitoring how you spend
-                        it, including demanding receipts for purchases: This
-                        restricts financial independence and creates an environment
-                        of control.
+                        it, including demanding receipts for purchases.
                     </p>
                     </div>
 
@@ -50,22 +46,19 @@ return (
                         Taking Your Paycheck
                     </p>
                     <p className="mt-2 text-sm text-slate-500">
-                        Depositing your paycheck into an account you can't access:
-                        This prevents you from having control over your own earnings
-                        and financial stability.
+                        Depositing your paycheck into an account you can't access.
                     </p>
                 </div>
 
                     <div className="p-5 flex flex-col items-center text-center group md:lg:xl:border-r cursor-default">
                     <span className="p-5 rounded-full bg-red-500 text-white shadow-lg shadow-gray-500"></span>
                     <p className="text-xl font-medium text-slate-700 mt-3">
-                        Interfering With Your Ability to Work
+                    Career Interference
                     </p>
                     <p className="mt-2 text-sm text-slate-500">
                         Stopping you from working, limiting the hours that you can
                         work, getting you fired, or forcing you to work certain
-                        types of jobs: These actions limit your financial
-                        independence and job opportunities.
+                        types of jobs.
                     </p>
                     </div>
 
@@ -76,22 +69,18 @@ return (
                     </p>
                     <p className="mt-2 text-sm text-slate-500">
                         Withdrawing money from you and/or your children's savings
-                        accounts without your permission: This action not only
-                        jeopardizes you and/or your children's financial future but
-                        also reflects financial control and abuse.
+                        accounts without your permission.
                     </p>
                     </div>
 
                     <div className="p-5 flex flex-col items-center text-center group cursor-default">
                     <span className="p-5 rounded-full bg-red-500 text-white shadow-lg shadow-gray-500"></span>
                     <p className="text-xl font-medium text-slate-700 mt-3">
-                        Intentionally Harming Your Credit Score
+                    Credit Score Sabotage
                     </p>
                     <p className="mt-2 text-sm text-slate-500">
                         Maxing out your credit cards without permission, not paying
-                        credit card bills, or otherwise harming your credit score:
-                        This can lead to financial ruin and make it difficult for
-                        you to access credit or financial resources in the future.
+                        credit card bills, or otherwise harming your credit score.
                     </p>
                     </div>
                 </div>
@@ -103,7 +92,7 @@ return (
         <div className="p-20 w-1/2">
             <img
             className="rounded-3xl"
-            src="/assets/images/Money-Tied-Up.jpg"
+            src="/images/Money-Tied-Up.jpg"
             alt="by artbaggage on pixabay"
             />
         </div>

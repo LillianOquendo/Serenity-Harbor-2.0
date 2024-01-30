@@ -24,11 +24,7 @@ function Physical(){
                     or any behavior that causes or has the intention of causing you injury, disability or death. Abusive behavior may not always
                     cause physical pain or leave a bruise, but it's still unhealthy and should always be taken seriously.
                     </p>
-                    <br></br>
-                    <h2 className="text-2xl font-medium text-slate-700 mt-3">
-                    5 Signs of Physical Abuse
-                    </h2>
-                    <br></br>
+                    <p className="text-center mt-2 text-sm text-slate-500">When reviewing this list please keep in mind that the definition of stalking varies from state to state.</p>
                 </div>
                 <div className="title-grid text-center"></div>
                 </div>
@@ -47,17 +43,17 @@ function Physical(){
                     <div className="p-5 flex flex-col items-center text-center group md:lg:xl:border-r cursor-default">
                     <span className="p-5 rounded-full bg-red-500 text-white shadow-lg shadow-gray-500"></span>
                     <p className="text-xl font-medium text-slate-700 mt-3">
-                    Stop You From Getting Help
+                    Blocking Help
                     </p>
                     <p className="mt-2 text-sm text-slate-500">
-                    Prevent you from contacting emergency services, including medical attention or law enforcement: This prevents the victim from seeking help when they are in danger or injured.
+                    Prevents you from contacting emergency services, including medical attention or law enforcement.They also prevent you from speaking to friends or family about the abuse.
                     </p>
                 </div>
 
                     <div className="p-5 flex flex-col items-center text-center group md:lg:xl:border-r cursor-default">
                     <span className="p-5 rounded-full bg-red-500 text-white shadow-lg shadow-gray-500"></span>
                     <p className="text-xl font-medium text-slate-700 mt-3">
-                    Use Weapons Against You
+                    Uses Weapons
                     </p>
                     <p className="mt-2 text-sm text-slate-500">
                     Including firearms, knives, bats, or mace: The use of weapons escalates the danger significantly and poses an immediate threat to the victim's safety.
@@ -67,20 +63,20 @@ function Physical(){
                     <div className="p-5 flex flex-col items-center text-center group md:lg:xl:border-r cursor-default">
                     <span className="p-5 rounded-full bg-red-500 text-white shadow-lg shadow-gray-500"></span>
                     <p className="text-xl font-medium text-slate-700 mt-3">
-                    Harming or Threatening to Harm Loved Ones
+                    Harm
                     </p>
                     <p className="mt-2 text-sm text-slate-500">
-                    Harming or threatening to harm your children, family, friends or pets: Abusing or harming loved ones, including children and pets, is a particularly severe form of abuse that can have lasting psychological and emotional effects.
+                    Harming or threatening to harm your children, family, friends or pets: Abusing or harming loved ones, including children and pets.
                     </p>
                     </div>
 
                     <div className="p-5 flex flex-col items-center text-center group cursor-default">
                     <span className="p-5 rounded-full bg-red-500 text-white shadow-lg shadow-gray-500"></span>
                     <p className="text-xl font-medium text-slate-700 mt-3">
-                    Behave Dangerously With You
+                    Behaving Dangerously
                     </p>
                     <p className="mt-2 text-sm text-slate-500">
-                    Drive recklessly or dangerously with you in the car or abandon you in unfamiliar places: This puts the victim's life at risk and can leave them vulnerable in dangerous situations.
+                    They drive recklessly or dangerously with you in the car or abandon you in unfamiliar places.
                     </p>
                     </div>
                     
@@ -93,7 +89,7 @@ function Physical(){
         <div className="p-20 w-1/2">
             <img
             className="rounded-3xl"
-            src="/assets/images/love-shouldnt-hurt.webp"
+            src="/images/love-shouldnt-hurt.webp"
             alt="by Anete Lusina on Pexels"
             />
         </div>
