@@ -2,6 +2,7 @@
 import React, { createContext, useContext, useEffect, useState } from "react";
 import NewsletterSignup from "./Newsletter";
 import emailjs from 'emailjs-com'
+import { api_key } from "./Secret/secret";
 
 
 function SafetyPlanForm() {
@@ -13,24 +14,32 @@ function SafetyPlanForm() {
     const [question4, setQuestion4] = useState("");
     const [question5, setQuestion5] = useState("");
     const [email, setEmail] = useState("");
-
+    // const [emailjsApiKey, setEmailjsApiKey]=useState("")//state to store the emailjs api key
+    const [formSubmitted, setFormSubmitted] = useState(false);
+    const [submittedSafetyPlan, setSubmittedSafetyPlan] = useState(null)
     
     useEffect(() => {
         //Initialize EmailJS with my public key
-        emailjs.init(process.env.REACT_APP_EMAIL_PUBLIC_KEY)
+        emailjs.init(api_key)
         fetch("/generate_safety_plan")
             .then((response) => response.json())
             .then((safetyplans) => setSafetyPlans(safetyplans));
     }, []);
+    // useEffect(()=>{
+    //     fetch("/generate_safety_plan")
+    //     .then(response => response.json())
+    //     .then(data =>{
+    //         setEmailjsApiKey(data.api.key);
+    //         setSafetyPlans(data.safetyplans);
+    //     })
+    //     .catch(error => console.error('Error: ', error));
+    // },[]);
 
-    const [formSubmitted, setFormSubmitted] = useState(false);
-    const [submittedSafetyPlan, setSubmittedSafetyPlan] = useState(null)
-
-
+    
     const handleSubmit = (event) => {
         event.preventDefault();
         setValue((event.target.value))
-        if (!question1 || !question2 || !question3 || !question4 || !question5 || !email) {
+        if (!question1 || !question2 || !question3 || !question4 || !question5 || !email ) {
             alert(
                 "Please fill in answers to all questions. If you wish to leave one blank type in 'None'."
             );
@@ -176,6 +185,7 @@ function SafetyPlanForm() {
                                 type="text"
                                 class="block w-full mt-1 border-white-300 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
                                 onChange={(e)=> setEmail(e.target.value)}
+                                // onChange={(e)=> setEmailjsApiKey(e.target.value)}
                                 />
                             </label>
 
