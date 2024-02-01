@@ -68,8 +68,8 @@ function NewsletterSignup() { // State for form data
     }
 
     return (
-        <footer className="bg-white ">
-            <div className="newsletter-bg ">
+        <footer className="bg-white">
+            <div className="newsletter-bg flex-col bottom-0 align-right ">
                 <div className="mx-auto max-w-screen-2xl px-4 md:px-8">
                     <div className="flex flex-col items-center justify-between md:flex-row">
                         <div id='5' className="mb-3 text-center md:mb-0 md:text-left">
@@ -99,12 +99,10 @@ function NewsletterSignup() { // State for form data
                                 className="w-72 flex-1 rounded border border-cyan-700 bg-white px-8 py-2 text-black placeholder-black outline-none ring-customTeal transition duration-100 focus:ring"
                             />
 
-                            <button type="submit" className="inline-block rounded bg-white px-8 py-2 text-center text-sm font-semibold text-customTeal outline-cyan-700 ring-customTeal transition duration-100">
+                            <button type="submit" className="inline-block rounded border border-cyan-900 bg-white px-8 py-2 text-center text-sm font-bold text-customTeal outline-cyan-900 ring-customTeal transition duration-100">
                                 Send
                             </button>
-                            {/* <button class="mx-auto lg:mx-0 hover:underline bg-cyan-700 text-white font-bold rounded-full my-3 py-2 px-7 shadow-md focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
-                            Submit
-                            </button> */}
+
                         </form>
                     </div>
                 </div>

@@ -185,14 +185,14 @@ function SafetyPlanForm() {
                                 type="text"
                                 class="block w-full mt-1 border-white-300 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
                                 onChange={(e)=> setEmail(e.target.value)}
-                                // onChange={(e)=> setEmailjsApiKey(e.target.value)}
+                              
                                 />
                             </label>
 
 
                             <div class="mb-6">
                                 <button
-                                    type="submit" class=" h-10 px-5 text-indigo-100 bg-indigo-700 rounded-lg transition-colors duration-150 focus:shadow-outline hover:bg-indigo-800"        >
+                                    type="submit" className="inline-block rounded border border-cyan-700 bg-white px-8 py-2 text-center text-sm font-bold text-customTeal outline-cyan-700 ring-customTeal transition duration-100">
                                     Send Answers
                                 </button>
                             </div>
@@ -214,13 +214,7 @@ function SafetyPlanForm() {
                 </div>
             </div>
 
-            <div className="p-20 w-1/3" >
-                <img
-                    className="rounded-3xl"
-                    src="\images\paper.jpg"
-                    alt="by Jess Bailey on Unsplash"
-                />
-            </div>
+
 
             <div>
                 <div class="relative -mt-12 lg:-mt-24">
