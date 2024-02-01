@@ -76,16 +76,16 @@ class SafetyPlan(db.Model, SerializerMixin):
     question3 = db.Column(db.String)
     question4 = db.Column(db.String)
     question5= db.Column(db.String)
-
+    email= db.Column(db.String)
 
 
 #add __repr__ for debugging purposes
     def __repr__(self):
-            return f"SafetyPlan(id={self.id}, question1 ='{self.question1}'),question2 ='{self.question2}'),question3 ='{self.question3}'),question4 ='{self.question4}'),question5 ='{self.question5}'),"
+            return f"SafetyPlan(id={self.id}, question1 ='{self.question1}'),question2 ='{self.question2}'),question3 ='{self.question3}'),question4 ='{self.question4}'),question5 ='{self.question5}'), email='{self.email}"
     
 
 #add validation to check that plan_content and creation_date fields are not empty
-    @validates('question_1', 'question_2', 'question_3', 'question_4', 'question_5')
+    @validates('question_1', 'question_2', 'question_3', 'question_4', 'question_5', 'email')
     def validate_question_fields(self, key, value):
         if not value:
             raise ValueError("Field cannot be empty")

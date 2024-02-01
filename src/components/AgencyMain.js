@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import AgencyCard from "./AgencyCard";
 import AgencyList from "./AgencyList";
 import AgencyMaps from "./AgencyMaps";
-//import "/home/lillian/Development/code/phase-5/Serenity-Harbor-Project/project/src/App.css"
 import ConsultForm from "./ConsultForm";
 
 function AgencyMain() {

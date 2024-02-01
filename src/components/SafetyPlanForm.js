@@ -1,268 +1,248 @@
 
 import React, { createContext, useContext, useEffect, useState } from "react";
-import { Button } from "@material-tailwind/react"
+import NewsletterSignup from "./Newsletter";
+import emailjs from 'emailjs-com'
 
-//const EmailContext = createContext();
-
-//this hook will consume the email context 
-//const useEmailContext = () => useContext(EmailContext);
 
 function SafetyPlanForm() {
     const [value, setValue] = useState("");
     const [safetyplans, setSafetyPlans] = useState([]);
-    //const [email, setEmail] = useState("");
     const [question1, setQuestion1] = useState("");
     const [question2, setQuestion2] = useState("");
     const [question3, setQuestion3] = useState("");
     const [question4, setQuestion4] = useState("");
     const [question5, setQuestion5] = useState("");
+    const [email, setEmail] = useState("");
+
     
     useEffect(() => {
+        //Initialize EmailJS with my public key
+        emailjs.init(process.env.REACT_APP_EMAIL_PUBLIC_KEY)
         fetch("/generate_safety_plan")
             .then((response) => response.json())
             .then((safetyplans) => setSafetyPlans(safetyplans));
     }, []);
 
     const [formSubmitted, setFormSubmitted] = useState(false);
+    const [submittedSafetyPlan, setSubmittedSafetyPlan] = useState(null)
+
 
     const handleSubmit = (event) => {
-        // event.prevent.Default();
+        event.preventDefault();
         setValue((event.target.value))
-        if (!question1 || !question2 || !question3 || !question4 || !question5) {
+        if (!question1 || !question2 || !question3 || !question4 || !question5 || !email) {
             alert(
                 "Please fill in answers to all questions. If you wish to leave one blank type in 'None'."
             );
             return;
         }
         const new_safety_plan = {
-            //email: email,
             question1: question1,
             question2: question2,
             question3: question3,
             question4: question4,
             question5: question5,
+            
         };
-
-        fetch("/generate_safety_plan", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-                Accept: "application/json",
-            },
-            body: JSON.stringify(new_safety_plan),
-        })
-            .then((response) => response.json())
-            .then((new_safety_plan) => {
-                setSafetyPlans([...safetyplans, new_safety_plan]);
-
+                //store submitted saftey plan
+                setSubmittedSafetyPlan(new_safety_plan);
+                console.log("State Variables: ", question1, question2, question3, question4, question5);
                 //form submission confirmation
                 setFormSubmitted(true);
-            });
+
+                // console.log('this is doing something');
+                // console.log(formSubmitted);
+                // console.log("Safety Plan information: ", new_safety_plan);
+
+        //EmailJS functionality
+        const formElement = document.getElementById('contact-form');
+
+        emailjs.sendForm('service_lnmx7l8', 'template_92dhvpp', formElement)
+        .then(
+            (response)=>{
+                console.log("Email sent successfully: ", response);
+                },
+            (error)=>{
+                console.error("Error sending email: ", error);
+            }
+            
+        )
+            
+        // fetch("/generate_safety_plan", {
+        //     method: "POST",
+        //     headers: {
+        //         "Content-Type": "application/json",
+        //         Accept: "application/json",
+        //     },
+        //     body: JSON.stringify(new_safety_plan),
+        // })
+        //     .then((response) => response.json())
+        //     .then((new_safety_plan) => {
+        //         setSafetyPlans([...safetyplans, new_safety_plan]);
+
+
+
+        //         // //store submitted saftey plan
+        //         // setSubmittedSafetyPlan(new_safety_plan);
+                
+        //         // //form submission confirmation
+        //         // setFormSubmitted(true);
+        //         // console.log('this is doing something');
+        //         // console.log(formSubmitted);
+        //     })
+        //     .catch((error) => {
+        //         console.error("Error fetching safety plan:", error)
+        //     });
+
     };
-
-    // Send the email data to the backend
-    // const emailData = {
-    //     username: "Serenity Harbor",
-    //     recipient_email: email, // Use the entered email
-    //     sender_email: "SerenityHarbor.DefaultEmail@gmail.com",
-    //     message:
-    //         "Thank you for trusting us. Please see your safety plan below. Keep it in a safe place incase of emergencies",
-    // };
-
-    // fetch("/send_email", {
-    //     method: "POST",
-    //     headers: {
-    //         "Content-Type": "application/json",
-    //         Accept: "application/json",
-    //     },
-    //     body: JSON.stringify(emailData),
-    // })
-    //     .then((response) => response.json())
-    //     .then((data) => {
-    //         console.log(data);
-    //     })
-    //     .catch((error) => {
-    //         console.error("Error sending email:", error);
-    //     });
-    // const handleEmailChange = (event) => {
-    //     setEmail(event.target.value);
-    // };
+//EmailJs send the value contained within the id's of the labels in your form
+//the sendForm function takes in a session id, the email template id and an HTML element contating the form and all of the inputs
+//when this form is sent to the Emailjs server it reads the form and the {{}} are the variables that contain the ids of the inputs
+//you're trying to reference. 
 
     return (
-        <div  id="sp1" class="bg-gray-200 w-full h-full flex items-center justify-center">
-            {formSubmitted ? (
-            <p>Thank you for your answers. Please see your generated plan below!</p>
-            ) : (
-        <div id="sp2" class="lg:flex items-center space-x-16">
-            <div id="sp3" class="w-5/6 md:w-3/4 lg:w-2/3 xl:w-2/3 2xl:w-2/3 mt-8 mx-auto px-16 py-8 rounded-lg">
+        <>
+            <div class="p-12 w-full md:w-3/4 md:max-w-full mx-left">
 
-                <h2 class="text-center text-6xl font-bold tracking-wide text-gray-800">Safety Plan Generator</h2>
-                <p class="text-center text-xl text-gray-600 mt-2">Answer each question and we will be able to send you a personalized safety plan directly and discreetly to your email</p>
+                <div class="p-6 border border-white-300 sm:rounded-md">
+                    {!formSubmitted ?
+                        <form id="contact-form" class="my-10 text-lg" onSubmit={handleSubmit}>
+                            <label class="block mb-6">
+                                <span class="text-white">1. Who are your trusted friends, family members, or
+                                    neighbors that you can reach out to in case of an emergency?
+                                    Include phone numbers if possible</span>
+                                <input
+                                    id="Q1"
+                                    name="Q1"
+                                    type="text"
+                                    class="block w-full mt-1 border-white-300 rounded-md shadow-sm  focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+                                    onChange={(e) => setQuestion1(e.target.value)}
+                                    placeholder="Joe Bloggs"
+                                    
+                                />
+                            </label>
+                            <label class="block mb-6">
+                                <span class="text-white">2. Is there reliable transportation available to you if you
+                                    need to leave quickly, and if not, who can you rely on for
+                                    transportation assistance?</span>
+                                <input
+                                    id="Q2"
+                                    name="Q2"
+                                    type="text"
+                                    class="block w-full mt-1 border-white-300 rounded-md shadow-sm  focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+                                    onChange={(e) => setQuestion2(e.target.value)}
+                                    placeholder="If you have no answer type 'No Answer'"
+                                />
+                            </label>
+                            <label class="block mb-6">
+                                <span class="text-white">3. List 3 safe location outside your home where you can go
+                                    if you feel threatened or need to leave quickly?</span>
+                                <input
+                                    id="Q3"
+                                    name="Q3"
+                                    type="text"
+                                    class="block w-full mt-1 border-white-300 rounded-md shadow-sm  focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+                                    onChange={(e) => setQuestion3(e.target.value)}
+                                />
+                            </label>
+                            <label class="block mb-6">
+                                <span class="text-white">4. Who are the people you can trust and confide in about the
+                                    abuse you're experiencing?</span>
+                                <input
+                                    id="Q4" 
+                                    name="Q4"
+                                    type="text"
+                                    class="block w-full mt-1 border-white-300 rounded-md shadow-sm  focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+                                    onChange={(e) => setQuestion4(e.target.value)}
+                                />
+                            </label>
+                            <label class="block mb-6">
+                                <span class="text-white">5. Can you provide a physical description of your abuser,
+                                    including details such as their gender, age, height, weight,
+                                    hair color, eye color, and any distinguishing features or
+                                    tattoos?</span>
+                                <input
+                                    id="Q5"
+                                    name="Q5"
+                                    type="text"
+                                    class="block w-full mt-1 border-white-300 rounded-md shadow-sm  focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+                                    onChange={(e) => setQuestion5(e.target.value)}
+                                />
+                            </label>
+                            <label class="block mb-6">
+                                <span class="text-white">Email: </span>
+                                <input
+                                name="email"
+                                type="text"
+                                class="block w-full mt-1 border-white-300 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+                                onChange={(e)=> setEmail(e.target.value)}
+                                />
+                            </label>
 
-                <form class="my-10 text-lg" onSubmit={handleSubmit}>
-                <div id="sp4" class="flex flex-col my-4">
-                        <label for="name" class="text-gray-700">1. Who are your trusted friends, family members, or
-                                        neighbors that you can reach out to in case of an emergency?
-                                        Include phone numbers if possible</label>
-                        <input onChange={(e)=>setQuestion1(e.target.value)} type="text" name="q1" id="q1" class="mt-2 p-2 border h-10 border-gray-300 focus:outline-none focus:ring-0 focus:border-gray-300 rounded text-sm text-gray-900" placeholder="If you have no answer type 'No Answer'"></input>
-                    </div>
-                    <div id="sp5" class="flex flex-col my-4">
-                        <label for="name" class="text-gray-700">2. Is there reliable transportation available to you if you
-                                        need to leave quickly, and if not, who can you rely on for
-                                        transportation assistance?</label>
-                        <input onChange={(e)=>setQuestion2(e.target.value)} type="text" name="q2" id="q2" class="mt-2 p-2 border border-gray-300 focus:outline-none focus:ring-0 focus:border-gray-300 rounded text-sm text-gray-900" placeholder="If you have no answer type 'No Answer'"></input>
-                    </div>
-                    <div id="sp6" class="flex flex-col my-4">
-                        <label for="name" class="text-gray-700">3. List 3 safe location outside your home where you can go
-                                        if you feel threatened or need to leave quickly?</label>
-                        <input onChange={(e)=>setQuestion3(e.target.value)} type="text" name="q3" id="q3" class="mt-2 p-2 border border-gray-300 focus:outline-none focus:ring-0 focus:border-gray-300 rounded text-sm text-gray-900" placeholder="If you have no answer type 'No Answer'"></input>
-                    </div>
-                    <div id="sp7" class="flex flex-col my-4">
-                        <label for="name" class="text-gray-700">4. Who are the people you can trust and confide in about the
-                                        abuse you're experiencing?</label>
-                        <input onChange={(e)=>setQuestion4(e.target.value)} type="text" name="q4" id="q4" class="mt-2 p-2 border border-gray-300 focus:outline-none focus:ring-0 focus:border-gray-300 rounded text-sm text-gray-900" placeholder="If you have no answer type 'No Answer'"></input>
-                    </div>
-                    <div id="sp8" class="flex flex-col my-4">
-                        <label for="name" class="text-gray-700">  5. Can you provide a physical description of your abuser,
-                                        including details such as their gender, age, height, weight,
-                                        hair color, eye color, and any distinguishing features or
-                                        tattoos?</label>
-                        <input onChange={(e)=>setQuestion5(e.target.value)}  type="text" name="q5" id="q5" class="mt-2 p-2 border border-gray-300 focus:outline-none focus:ring-0 focus:border-gray-300 rounded text-sm text-gray-900" placeholder="If you have no answer type 'No Answer'"></input>
-                    </div>
 
-                    
-                    <div id="sp11" class="flex flex-col my-4">
-                        <label for="password" class="text-gray-700">Email</label>
-                        <div id="sp12" x-data="{ show: false }" class="relative flex items-center mt-2">
-                            {/* <input onChange={(e)=>setEmail(e.target.value)} type="text" name="email" id="email" class="flex-1 p-2 border pr-10 border-gray-300 focus:outline-none focus:ring-0 focus:border-gray-300 rounded text-sm text-gray-900" placeholder="Enter your email"></input> */}
-                            <button type="submit" class="absolute right-2 bg-transparent flex items-center justify-center text-gray-700">
-                                
-                            </button>
-                        </div>
-                    </div>
-                    <div id="sp13" class="my-4 flex items-center justify-end space-x-4">
-                        <Button type='submit'> Send Personal Safety Plan</Button>
-                    </div>
-                
-            
-            
-            <div id="sp14" class="flex items-center justify-center">
-                
-            </div>
-            </form>
-            </div>
-            </div>
-            )}
+                            <div class="mb-6">
+                                <button
+                                    type="submit" class=" h-10 px-5 text-indigo-100 bg-indigo-700 rounded-lg transition-colors duration-150 focus:shadow-outline hover:bg-indigo-800"        >
+                                    Send Answers
+                                </button>
+                            </div>
+
+{/* edit box size, header size, font weight, picture size and location*/}
+                        </form> : <div class="text-white mt-8">
+                            <h2 class="text-xl font-bold mb-2">Safety Plan Submitted!</h2>
+                            <p>Your safety plan details:</p>
+                            <ul>
+                                <li>1. Reach out to these trusted people: {submittedSafetyPlan.question1}</li>
+                                <li>2. This is how you're going to travel to safety: {submittedSafetyPlan.question2}</li>
+                                <li>3. Safe locations outside your home: {submittedSafetyPlan.question3}</li>
+                                <li>4. People you can trust and confide in about your situation: {submittedSafetyPlan.question4}</li>
+                                <li>5. Physical description of the person: {submittedSafetyPlan.question5}</li>
+                            </ul>
+
+
+                        </div>}
+                </div>
             </div>
 
+            <div className="p-20 w-1/3" >
+                <img
+                    className="rounded-3xl"
+                    src="\images\paper.jpg"
+                    alt="by Jess Bailey on Unsplash"
+                />
+            </div>
+
+            <div>
+                <div class="relative -mt-12 lg:-mt-24">
+                    <svg
+                        viewBox="0 0 1428 174"
+                        version="1.1"
+                        xmlns="http://www.w3.org/2000/svg"
+                        xmlnsXlink="http://www.w3.org/1999/xlink">
+                        <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                            <g transform="translate(-2.000000, 44.000000)" fill="#FFFFFF" fill-rule="nonzero">
+                                <path d="M0,0 C90.7283404,0.927527913 147.912752,27.187927 291.910178,59.9119003 C387.908462,81.7278826 543.605069,89.334785 759,82.7326078 C469.336065,156.254352 216.336065,153.6679 0,74.9732496" opacity="0.100000001"></path>
+                                <path
+                                    d="M100,104.708498 C277.413333,72.2345949 426.147877,52.5246657 546.203633,45.5787101 C666.259389,38.6327546 810.524845,41.7979068 979,55.0741668 C931.069965,56.122511 810.303266,74.8455141 616.699903,111.243176 C423.096539,147.640838 250.863238,145.462612 100,104.708498 Z"
+                                    opacity="0.100000001"
+                                ></path>
+                                <path d="M1046,51.6521276 C1130.83045,29.328812 1279.08318,17.607883 1439,40.1656806 L1439,120 C1271.17211,77.9435312 1140.17211,55.1609071 1046,51.6521276 Z" id="Path-4" opacity="0.200000003"></path>
+                            </g>
+                            <g transform="translate(-4.000000, 76.000000)" fill="#FFFFFF" fill-rule="nonzero">
+                                <path
+                                    d="M0.457,34.035 C57.086,53.198 98.208,65.809 123.822,71.865 C181.454,85.495 234.295,90.29 272.033,93.459 C311.355,96.759 396.635,95.801 461.025,91.663 C486.76,90.01 518.727,86.372 556.926,80.752 C595.747,74.596 622.372,70.008 636.799,66.991 C663.913,61.324 712.501,49.503 727.605,46.128 C780.47,34.317 818.839,22.532 856.324,15.904 C922.689,4.169 955.676,2.522 1011.185,0.432 C1060.705,1.477 1097.39,3.129 1121.236,5.387 C1161.703,9.219 1208.621,17.821 1235.4,22.304 C1285.855,30.748 1354.351,47.432 1440.886,72.354 L1441.191,104.352 L1.121,104.031 L0.457,34.035 Z"
+                                ></path>
+                            </g>
+                        </g>
+                    </svg>
+
+                </div>
+            </div>
+            <div class="white-rectangle"></div>
+
+            <NewsletterSignup />
+        </>
     )
-    };        
+};
 
 export default SafetyPlanForm;
-{/* <div>
-
-
-                {formSubmitted ? (
-            <p>Thank you for your answers. Please see your generated plan below!</p>
-            ) : (
-            <div>
-                <section className="bg-gradient-to-r from-cyan-500 to-blue-500">
-                <div id ='1' className="px-4 py-12 mx-auto max-w-7xl sm:px-6 md:px-12 lg:px-24 lg:py-24">
-                        <div id='2' className="flex justify-center">
-                        <div id ='3'className="w-full max-w-2xl bg-white rounded-lg shadow-xl">
-                                <div id='4' className="p-6 sm:p-8">
-                                    <div id='5' className="mt-3">
-                                        <h3 className="text-2xl font-bold text-customTeal text-center lg:text-5xl">
-                                            Safety Plan Generator
-                                        </h3>
-                                    </div>
-                                    <div id='6' className="mt-3 text-base text-gray-500 text-center">
-                                        <p>We're Here to Help</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                            <form onSubmit={handleSubmit}>
-                        <div id="div-8" className="mt-6 space-y-2 text-center text-xl text-white p-4">
-                                <div id="div-9">
-                                    <label>
-                                        1. Who are your trusted friends, family members, or
-                                        neighbors that you can reach out to in case of an emergency?
-                                        Include phone numbers if possible
-                                    </label>
-                                    <textarea
-                                        name="message"
-                                        className="h-60 w-full rounded border bg-gray-50 px-3 py-2 text-gray-800 outline-none ring-indigo-300 transition duration-100 focus:ring focus:border-customTeal"
-                                        placeholder="If you have no answer type 'None'"
-                                    ></textarea>
-                                </div>
-                                <div id="div-10 text-xl text-white p-4">
-                                    <label>
-                                        2. Is there reliable transportation available to you if you
-                                        need to leave quickly, and if not, who can you rely on for
-                                        transportation assistance?
-                                    </label>
-                                    <textarea
-                                        name="message"
-                                        className="h-60 w-full rounded border bg-gray-50 px-3 py-2 text-gray-800 outline-none ring-indigo-300 transition duration-100 focus:ring focus:border-customTeal"
-                                        placeholder="If you have no answer type 'None'"
-                                    ></textarea>
-                                </div>
-                                <div id="div-11 text-xl text-white p-4">
-                                    <label>
-                                        3. List 3 safe location outside your home where you can go
-                                        if you feel threatened or need to leave quickly?
-                                    </label>
-                                    <textarea
-                                        name="message"
-                                        className="h-60 w-full rounded border bg-gray-50 px-3 py-2 text-gray-800 outline-none ring-indigo-300 transition duration-100 focus:ring focus:border-customTeal"
-                                        placeholder="If you have no answer type 'None'"
-                                    ></textarea>
-                                </div>
-                                <div id="div-12 text-xl text-white p-4">
-                                    <label>
-                                        4. Who are the people you can trust and confide in about the
-                                        abuse you're experiencing?
-                                    </label>
-                                    <textarea
-                                        name="message"
-                                        className="h-60 w-full rounded border bg-gray-50 px-3 py-2 text-gray-800 outline-none ring-indigo-300 transition duration-100 focus:ring focus:border-customTeal"
-                                        placeholder="If you have no answer type 'None'"
-                                    ></textarea>
-                                </div>
-                                <div id="div-13 text-xl text-white p-4">
-                                    <label>
-                                        5. Can you provide a physical description of your abuser,
-                                        including details such as their gender, age, height, weight,
-                                        hair color, eye color, and any distinguishing features or
-                                        tattoos?
-                                    </label>
-                                    <textarea
-                                        name="message"
-                                        className="h-60 w-full rounded border bg-gray-50 px-3 py-2 text-gray-800 outline-none ring-indigo-300 transition duration-100 focus:ring focus:border-customTeal"
-                                        placeholder="If you have no answer type 'None'"
-                                    ></textarea>
-                                    </div>
-                                    <div className="mt-6">
-                            
-                            <div>
-                                <label>
-                                    Email a copy of your safetyplan to yourself:
-                                    <br></br>
-                                    <input type='email' name='email' value={email} onChange={handleEmailChange} />
-                                </label>
-                            </div>
-                            <br></br>
-                            <button type = 'submit' className="inline-block rounded-lg bg-customTeal px-8 py-3 text-center text-sm font-semibold text-white outline-none ring-customLightBlue transition duration-100 hover:bg-customLightBlue focus-visible:ring active:bg-customLightBlue md:text-base">Generate Safety Plan</button>
-                            
-                        </div>
-                    </div>
-                    </form>
-                </div>
-            </section>
-        </div>
-        
-    )}
-    </div>
-    )
-        } */}

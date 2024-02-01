@@ -3,7 +3,7 @@ import React from "react";
 function AboutUs() {
     return (
         <div>
-            <div className="contact-us bg-gradient-to-r from-cyan-500 to-blue-500">
+            <div>
                 <div><h3 id="heading-1" className="text-lg font-bold text-white leading-6 lg:text-6xl text-center py-4">About Us</h3></div>
                 <div class="mx-auto max-w-screen-2xl px-4 md:px-8">
                     <header class="mb-8 flex items-center justify-between py-4 md:mb-12 md:py-8 xl:mb-16">
@@ -42,8 +42,8 @@ function AboutUs() {
                         {/* <!-- content - end -->
 
                         <!-- image - start --> */}
-                        <div class="h-48 overflow-hidden rounded-lg bg-gray-100 shadow-lg lg:h-auto xl:w-5/12 py-10 p">
-                            <img id='about-pic' src="https://i.ibb.co/m4fDvWx/Logo-500x500-px.jpg" loading="lazy" alt="Photo by Lillian Oquendo" class="h-full w-full object-cover object-center" />
+                        <div class="h-48 overflow-hidden rounded-lg lg:h-auto xl:w-5/12 py-10 p">
+                            <img id='about-pic' src="https://i.ibb.co/m4fDvWx/Logo-500x500-px.jpg" alt="by Lillian Oquendo" />
                         </div>
                         {/* <!-- image - end --> */}
                     </section>

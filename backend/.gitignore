@@ -1,1 +1,2 @@
-keys.py
+#Files to ignore
+.env

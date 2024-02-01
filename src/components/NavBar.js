@@ -31,6 +31,8 @@ const colors = {
   teal: "bg-teal-50 text-teal-500",
   cyan: "bg-cyan-50 text-cyan-500",
   pink: "bg-pink-50 text-pink-500",
+  yellow: "bg-yellow-50 text-yellow-500",
+
 };
 
 const navListMenuItems = [
@@ -56,7 +58,7 @@ const navListMenuItems = [
     description: "Learn what Digital Abuse is.",
   },
   {
-    color: "black",
+    color: "yellow",
     icon: ChevronDoubleRightIcon,
     title: "Sexual Abuse",
     description: "Learn what Sexual Abuse is.",
