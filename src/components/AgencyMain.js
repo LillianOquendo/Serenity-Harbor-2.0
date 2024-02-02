@@ -2,7 +2,8 @@ import React, { useEffect, useState } from "react";
 import AgencyCard from "./AgencyCard";
 import AgencyList from "./AgencyList";
 import AgencyMaps from "./AgencyMaps";
-import ConsultForm from "./ConsultForm";
+import AgencyCarousel from "./AgencyCarousel";
+
 
 function AgencyMain() {
     const [selectedCategory, setSelectedCategory] = useState('');
@@ -55,7 +56,7 @@ function AgencyMain() {
                     </div>
             ) }
         </div>
-        <ConsultForm/>
+        <AgencyCarousel/>
         </div>
         </div>
     );
