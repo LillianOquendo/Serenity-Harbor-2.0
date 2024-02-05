@@ -2,7 +2,75 @@ body{
 background:  linear-gradient(90deg, #3AAFB9 0%,#093A3E 50%, #001011 100%);
  
 }
+.agencyBody {
+  margin: 10;
+  font-family: Arial, sans-serif;
+  
+}
+/* .carousel-container {
+  width: 1000px;
+  margin-left: 485px;
+  
+} */
 
+.agencyContainer {
+  width: 2000px;
+  margin: 0 auto;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.agencyHeader {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.agencyHeader h1 {
+  color: #ffffff;
+  font-size: 20px;
+}
+
+.agency-cards {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.agency-card {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 10px;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  font-size: 1.2rem;
+  margin-top: 10px;
+}
+
+.agency-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.agencies-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.agency {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 10px;
+  margin-bottom: 10px;
+  background-color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.map-container {
+  margin-top: 20px;
+  height: 400px;
+}
 
 
 /* .App {

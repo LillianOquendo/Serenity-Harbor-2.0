@@ -48,13 +48,13 @@ function App() {
       <div>
         <NavbarWithMegaMenu />
         <Routes>
-           <Route path="/" element={<Homepage />} />
+          <Route path="/" element={<Homepage />} />
           <Route path="/safety_plan" element={<SafetyPlan />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/financial_abuse" element={<Financial/>}/>
           <Route path="/emotional_abuse"element={<Emotional/>}/>
           <Route path="/physical_abuse" element={<Physical/>}/>
-           <Route path="/sexual_abuse" element={<Sexual/>}/>
+          <Route path="/sexual_abuse" element={<Sexual/>}/>
           <Route path="/digital_abuse" element={<Digital/>}/>
           <Route path="/stalking" element={<Stalking/>}/>
           <Route path="/agencies" element={<AgencyMain />} />   

@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import AgencyCard from "./AgencyCard";
 import AgencyList from "./AgencyList";
 import AgencyMaps from "./AgencyMaps";
-import AgencyCarousel from "./AgencyCarousel";
 
 
 function AgencyMain() {
@@ -56,7 +55,6 @@ function AgencyMain() {
                     </div>
             ) }
         </div>
-        <AgencyCarousel/>
         </div>
         </div>
     );
