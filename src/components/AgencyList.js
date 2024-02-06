@@ -1,13 +1,14 @@
 import React from "react";
-import { Carousel, Typography } from "@material-tailwind/react";
+import { Carousel, Typography, Button } from "@material-tailwind/react";
 
 function AgencyList({ selectedCategory, agencies }) {
+
     const filteredAgencies = agencies.filter(
         (agency) => agency.category === selectedCategory
     );
 
     return (
-        <Carousel className="agencies-list rounded-xl">
+        <Carousel className="rounded-xl">
             {filteredAgencies.map((agency) => (
                 <div key={agency.id} className="relative h-full w-full">
                     <img
@@ -29,10 +30,10 @@ function AgencyList({ selectedCategory, agencies }) {
                                 color="white"
                                 className="mb-12 opacity-80"
                             >
-                            <span><strong>Address: </strong>{agency.fulladdress}</span>
-                            <span><strong>Phone: </strong>{agency.phone}</span>
-                            <span><strong>Website: </strong>{agency.website}</span>
-                            <span><strong>Hours: </strong>{agency.opening_hours}</span>
+                            <span><strong>Address: </strong>{agency.fulladdress}</span><br></br>
+                            <span><strong>Phone: </strong>{agency.phone}</span><br></br>
+                            <span><strong>Website: </strong>{agency.website}</span><br></br>
+                            <span><strong>Hours: </strong>{agency.opening_hours}</span><br></br>
                             </Typography>
                         </div>
                     </div>
@@ -40,4 +41,5 @@ function AgencyList({ selectedCategory, agencies }) {
             ))}
         </Carousel>
     );
-}export default AgencyList;
+}
+export default AgencyList;

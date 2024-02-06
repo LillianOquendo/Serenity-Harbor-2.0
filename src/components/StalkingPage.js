@@ -87,7 +87,7 @@ function Stalking(){
 
         <div className="p-20 w-1/2">
             <img
-            className="rounded-3xl"
+            className="rounded-3xl border-8"
             
             src="/images/stalker.jpg"
             alt="by PublicDomainPictures on Pixabay"

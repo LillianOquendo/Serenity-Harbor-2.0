@@ -4,6 +4,7 @@ import AgencyList from "./AgencyList";
 import AgencyMaps from "./AgencyMaps";
 
 
+
 function AgencyMain() {
     const [selectedCategory, setSelectedCategory] = useState('');
     const [agencies, setAgencies] =useState([]);
@@ -52,11 +53,12 @@ function AgencyMain() {
             {selectedCategory && (
                 <div className="carousel-container">
                     <AgencyList selectedCategory={selectedCategory} agencies={agencies}/> 
-                    </div>
-            ) }
+            </div> 
+            ) } 
+        </div>   
         </div>
         </div>
-        </div>
+        
     );
 }
 

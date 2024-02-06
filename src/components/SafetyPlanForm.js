@@ -111,6 +111,7 @@ function SafetyPlanForm() {
 
     return (
         <>
+        <h1 className="text-">Safety Plan Generator</h1>
             <div class="p-12 w-full md:w-3/4 md:max-w-full mx-left">
 
                 <div class="p-6 border border-white-300 sm:rounded-md">
