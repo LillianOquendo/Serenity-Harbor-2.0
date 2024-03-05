@@ -25,15 +25,7 @@ function SafetyPlanForm() {
             .then((response) => response.json())
             .then((safetyplans) => setSafetyPlans(safetyplans));
     }, []);
-    // useEffect(()=>{
-    //     fetch("/generate_safety_plan")
-    //     .then(response => response.json())
-    //     .then(data =>{
-    //         setEmailjsApiKey(data.api.key);
-    //         setSafetyPlans(data.safetyplans);
-    //     })
-    //     .catch(error => console.error('Error: ', error));
-    // },[]);
+
 
     
     const handleSubmit = (event) => {
@@ -77,32 +69,6 @@ function SafetyPlanForm() {
             
         )
             
-        // fetch("/generate_safety_plan", {
-        //     method: "POST",
-        //     headers: {
-        //         "Content-Type": "application/json",
-        //         Accept: "application/json",
-        //     },
-        //     body: JSON.stringify(new_safety_plan),
-        // })
-        //     .then((response) => response.json())
-        //     .then((new_safety_plan) => {
-        //         setSafetyPlans([...safetyplans, new_safety_plan]);
-
-
-
-        //         // //store submitted saftey plan
-        //         // setSubmittedSafetyPlan(new_safety_plan);
-                
-        //         // //form submission confirmation
-        //         // setFormSubmitted(true);
-        //         // console.log('this is doing something');
-        //         // console.log(formSubmitted);
-        //     })
-        //     .catch((error) => {
-        //         console.error("Error fetching safety plan:", error)
-        //     });
-
     };
 //EmailJs send the value contained within the id's of the labels in your form
 //the sendForm function takes in a session id, the email template id and an HTML element contating the form and all of the inputs
@@ -111,7 +77,13 @@ function SafetyPlanForm() {
 
     return (
         <>
-        <h1 className="text-">Safety Plan Generator</h1>
+        <h3 className="text-center my-4 text-5xl font-bold leading-tight text-white drop-shadow-[0px_5px_0px_rgba(0,0,0,.5)] ">
+            Safety Plan Generator
+            </h3>
+            <h2 className="text-center my-4 text-xl font-bold leading-tight text-white drop-shadow-[0px_5px_0px_rgba(0,0,0,1)]">
+                Fill out the form and a completed safety plan will be emailed to you.  <br></br>
+                In the event of an emergency please do not hesitate to dial 911.
+            </h2>
             <div class="p-12 w-full md:w-3/4 md:max-w-full mx-left">
 
                 <div class="p-6 border border-white-300 sm:rounded-md">
@@ -120,14 +92,14 @@ function SafetyPlanForm() {
                             <label class="block mb-6">
                                 <span class="text-white">1. Who are your trusted friends, family members, or
                                     neighbors that you can reach out to in case of an emergency?
-                                    Include phone numbers if possible</span>
+                                    Include phone numbers if possible:</span>
                                 <input
                                     id="Q1"
                                     name="Q1"
                                     type="text"
                                     class="block w-full mt-1 border-white-300 rounded-md shadow-sm  focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
                                     onChange={(e) => setQuestion1(e.target.value)}
-                                    placeholder="Joe Bloggs"
+                                    placeholder="If you have no answer type 'No Answer'"
                                     
                                 />
                             </label>
@@ -153,6 +125,7 @@ function SafetyPlanForm() {
                                     type="text"
                                     class="block w-full mt-1 border-white-300 rounded-md shadow-sm  focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
                                     onChange={(e) => setQuestion3(e.target.value)}
+                                    placeholder="If you have no answer type 'No Answer'"
                                 />
                             </label>
                             <label class="block mb-6">
@@ -164,6 +137,7 @@ function SafetyPlanForm() {
                                     type="text"
                                     class="block w-full mt-1 border-white-300 rounded-md shadow-sm  focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
                                     onChange={(e) => setQuestion4(e.target.value)}
+                                    placeholder="If you have no answer type 'No Answer'"
                                 />
                             </label>
                             <label class="block mb-6">
@@ -177,6 +151,7 @@ function SafetyPlanForm() {
                                     type="text"
                                     class="block w-full mt-1 border-white-300 rounded-md shadow-sm  focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
                                     onChange={(e) => setQuestion5(e.target.value)}
+                                    placeholder="If you have no answer type 'No Answer'"
                                 />
                             </label>
                             <label class="block mb-6">
@@ -186,6 +161,7 @@ function SafetyPlanForm() {
                                 type="text"
                                 class="block w-full mt-1 border-white-300 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
                                 onChange={(e)=> setEmail(e.target.value)}
+                                placeholder="Write Email Here"
                               
                                 />
                             </label>

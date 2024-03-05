@@ -13,12 +13,12 @@ background:  linear-gradient(90deg, #3AAFB9 0%,#13646b 50%, #013c40 100%);
   
 } 
  
-.agencyContainer {
+/* .agencyContainer {
   width: 2000px;
   margin: 0 auto;
   padding: 20px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
+} */
 
 .agencyHeader {
   text-align: center;
@@ -67,10 +67,10 @@ background:  linear-gradient(90deg, #3AAFB9 0%,#13646b 50%, #013c40 100%);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.map-container {
+/* .map-container {
   margin-top: 20px;
   height: 400px;
-} 
+}  */
 
 
  .App {

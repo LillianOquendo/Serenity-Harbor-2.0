@@ -1,12 +1,12 @@
 import React from "react";
-import { Carousel, Typography, Button } from "@material-tailwind/react";
+import { Carousel, Typography} from "@material-tailwind/react";
 
 function AgencyList({ selectedCategory, agencies }) {
 
     const filteredAgencies = agencies.filter(
         (agency) => agency.category === selectedCategory
     );
-
+//need to edit line 19. Div is not centering on page. May have something to do with Map Container
     return (
         <Carousel className="rounded-xl">
             {filteredAgencies.map((agency) => (
@@ -16,7 +16,7 @@ function AgencyList({ selectedCategory, agencies }) {
                         alt={agency.name}
                         className="h-full w-full object-cover"
                     />
-                    <div className="absolute inset-0 grid h-full w-full place-items-center bg-black/75">
+                    <div className="absolute inset-0 flex justify-center items-center bg-black bg-opacity-75">
                         <div className="w-3/4 text-center md:w-2/4">
                             <Typography
                                 variant="h1"

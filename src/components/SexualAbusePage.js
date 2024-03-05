@@ -94,9 +94,9 @@ function Sexual() {
         </div>
     </div>
 
-    <div className="p-20 w-1/2">
+    <div className="p-20 w-1/2 ">
         <img
-        className="rounded-3xl"
+        className="rounded-3xl border-8"
         src="/images/hands.jpg"
         alt="by Josie Stephens on Pexels"
         style={{ width: '75%', height: 'auto' }}

@@ -1,7 +1,6 @@
 import React from "react";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import 'leaflet/dist/leaflet.css';
-//import './styles.css';
 import {Icon} from 'leaflet'
 
 function Contact() {
@@ -17,8 +16,8 @@ function Contact() {
     });
 
     return (
-        <div className="contact-us bg-gradient-to-r from-cyan-500 to-blue-500">
-
+        <div>
+<br></br>
 <h3 id="heading-1" className="text-lg font-bold text-white leading-6 lg:text-5xl text-center px-4 ">Contact Us</h3>
             <p className="lg:text-3xl text-center">Phone: {phoneNumber}</p>
             <p className="lg:text-3xl text-center">Address: {address}</p>
